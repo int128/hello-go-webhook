@@ -23,5 +23,5 @@ func receiveWebhook(w http.ResponseWriter, r *http.Request, _ httprouter.Params)
 		return
 	}
 
-	fmt.Fprintf(w, "id = %d", webhookEvent.ID)
+	fmt.Fprintf(w, "id = %d\nuser.name = %s", webhookEvent.ID, webhookEvent.User.Name)
 }
